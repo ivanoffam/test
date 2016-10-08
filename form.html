@@ -1,0 +1,62 @@
+<html>
+    <head>
+       <title>Form</title>
+	   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.1/css/uikit.min.css" />
+    </head>
+    <body> 
+	
+		<input type="text" name="name" id="param1"/><br>
+		<input type="text" name="name" id="param2"/><br>
+		<input type="button" name="button" id="ajax">
+		<p id="show"></p>
+
+		<script
+			  src="https://code.jquery.com/jquery-3.1.1.js"
+			  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+			  crossorigin="anonymous">
+		</script>
+		
+		<script>
+			//$("#ajax").on("click", function(){alert("HW!")})
+			//$("#ajax").on("dblclick", function(){alert("HW!")})
+			//$("#ajax").on("mouseover", function(){alert("HW!")})
+			
+			/*$("#ajax").on("click", function(){
+				$.ajax({
+					method:"GET",
+					url:"ajax.php",
+					data:{param1:5, param2:10}
+				}).done( function(data){	
+					$("#show").append(data);
+				})
+			});*/
+			
+			// отрисовка квадрата хардкода
+			/*$("#ajax").on("click", function(){
+				$.ajax({
+					method:"GET",
+					url:"example2.php",
+					data:{a:50, b:10}
+				}).done( function(data){	
+					$("#show").append(data);
+				})
+			});*/
+			
+			// отрисовка квадрата хардкода
+			$("#ajax").on("click", function(){
+				$.ajax({
+					method:"GET",
+					url:"example2.php",
+					data:{a:$("#param1").val(), b:$("#param2").val()}
+				}).done( function(data){	
+					$("#show").append(data);
+					//$("#show").val(data);//обновление поля в форме!
+				})
+			});
+			
+		</script>
+		
+		
+		
+	</body>
+</html>
